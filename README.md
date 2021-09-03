@@ -5,7 +5,9 @@ Expand Library Scraper cheat for https://animemusicquiz.com/
 ## Prerequisites
 
 Python 3
+
 pandas (comes with anaconda or use ``` pip install pandas ``` )
+
 selenium (install geckodriver https://github.com/mozilla/geckodriver)
 
 ## Scrape
