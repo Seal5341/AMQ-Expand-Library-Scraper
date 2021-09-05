@@ -8,7 +8,7 @@ Python 3
 
 pandas (comes with anaconda or use ``` pip install pandas ``` )
 
-selenium (install geckodriver https://github.com/mozilla/geckodriver)
+Scraper: selenium (install geckodriver https://github.com/mozilla/geckodriver)
 
 ## Read Saved Database
 
@@ -19,7 +19,7 @@ selenium (install geckodriver https://github.com/mozilla/geckodriver)
 5. Paste into the search box of the Read AMQ Database window and press enter
 6. Anime is automatically copied to clipboard for easy pasting
 
-## Scrape
+## Scraper
 
 1. Before running the amqscrape.py ensure that your account has the list you want to use e.g. https://myanimelist.net/profile/purplepinapples
 2. Simply alter the file contents to your AMQ username and password then run it and wait 19 hours (approx for 7000 anime)
