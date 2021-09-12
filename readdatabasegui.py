@@ -48,7 +48,7 @@ def getsonginfo(event='event'):
     output_anime.configure(text=animename + ' ' + songtype)
     output_song.configure(text='Song: ' + songname)
     output_artist.configure(text='Artist: ' + artistname)
-    samesongartist(animename,songtype,songname,artistname,filename,filename.split('.')[-1])
+    samesongartist(animename,songname,artistname)
     searchinput.delete('0', 'end')
 
 def copysongtoclipboard():
@@ -70,14 +70,9 @@ def copyall():
     window.clipboard_append(' | ')
     window.clipboard_append(output_artist['text'].split(' ')[1:])
 
-def samesongartist(animename,songtype,songname,artistname,filename,filetype):
-    dfsongartist = pd.DataFrame()
+def samesongartist(animename,songname,artistname):
     try:
-        if filetype == 'mp3':
-            column = 'Mp3 Link'
-        elif filetype == 'webm':
-            column = 'Webm Link'
-        dfsongartist = df.loc[df['Anime Name'] != animename].loc[df['Song Name'] == songname].loc[df['Song Artist'] == artistname].loc[df[column] != filename]
+        dfsongartist = df.loc[df['Anime Name'] != animename].loc[df['Song Name'] == songname].loc[df['Song Artist'] == artistname]
     except:
         pass
     if len(dfsongartist) == 0:

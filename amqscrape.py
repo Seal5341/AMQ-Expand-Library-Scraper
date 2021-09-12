@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException, ElementNotInteractableException
 # from selenium.webdriver.common.action_chains import ActionChains
 
-filename = '20210810.csv'
+filename = datetime.now().strftime("%Y%m%d") + '.csv'
 
 count = 0
 prev_link = ''
@@ -127,6 +127,7 @@ except ElementNotInteractableException:
 except:
     traceback.print_exc()
 
+print('Last Anime: #' + str(count), old_anime_name)
 file.close() # close periodically to save data
 driver.quit()
 
@@ -143,7 +144,6 @@ while count < totalnumberofentries:
     print('Waiting for auto logout...\n')
     time.sleep(30) # dodge login confirmation due to imcomplete logout
     print(datetime.now().strftime("%d/%m/%Y %H:%M:%S"), 'Loop #' + str(runcount))
-    print('count =', count)
     
     # start web browser
     driver = webdriver.Firefox() # firefox is faster than chrome and edge, not sure if headless works
